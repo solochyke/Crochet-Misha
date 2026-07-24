@@ -1,327 +1,167 @@
-
-html_content = '''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crochet Misha — Handmade with Love</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naya Crochet | Handcrafted Elegance</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">🧶</span>
-                <span class="logo-text">Crochet Misha</span>
-            </a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="custom.html">Custom Orders</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="shop.html" class="nav-cta">Shop Now</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-content">
-            <span class="hero-tag">✨ Handmade in Every Stitch</span>
-            <h1>Cozy Creations by <span class="highlight">Misha</span></h1>
-            <p>Unique crochet pieces made with love, patience, and the softest yarn. From adorable amigurumi to cozy wearables — each piece tells a story.</p>
-            <div class="hero-buttons">
-                <a href="shop.html" class="btn btn-primary">Browse Collection</a>
-                <a href="https://wa.me/1234567890?text=Hi%20Misha!%20I%20saw%20your%20website%20and%20I'm%20interested%20in%20your%20crochet%20pieces.%20" class="btn btn-whatsapp" target="_blank">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Chat on WhatsApp
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div><strong>500+</strong><span>Happy Customers</span></div>
-                <div><strong>100%</strong><span>Handmade</span></div>
-                <div><strong>5★</strong><span>Average Rating</span></div>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-img-wrapper">
-                <div class="yarn-decoration yarn-1">🧶</div>
-                <div class="yarn-decoration yarn-2">🧵</div>
-                <div class="yarn-decoration yarn-3">✨</div>
-                <div class="hero-placeholder">
-                    <span>🧸</span>
-                    <p>Your crochet masterpiece here</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Announcement Bar -->
+  <div class="top-bar">
+    <p>Exclusive Handcrafted Designs • Worldwide Shipping Available</p>
+  </div>
 
-    <!-- Featured Collection -->
-    <section class="featured" id="shop">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Bestsellers</span>
-                <h2>Featured Collection</h2>
-                <p>Our most loved pieces, crafted with care</p>
-            </div>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Products injected via JS -->
-            </div>
-            <div class="section-footer">
-                <a href="shop.html" class="btn btn-outline">View All Products →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Custom Orders Banner -->
-    <section class="custom-banner">
-        <div class="container">
-            <div class="custom-content">
-                <div class="custom-text">
-                    <span class="section-tag">Personalized</span>
-                    <h2>Have Something Special in Mind?</h2>
-                    <p>From custom amigurumi characters to personalized gifts — let's bring your vision to life, one stitch at a time.</p>
-                    <a href="https://wa.me/1234567890?text=Hi%20Misha!%20I%20have%20a%20custom%20crochet%20idea%20and%20I'd%20love%20to%20discuss%20it%20with%20you.%20" class="btn btn-whatsapp btn-large" target="_blank">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Message Misha on WhatsApp
-                    </a>
-                </div>
-                <div class="custom-visual">
-                    <div class="custom-card">
-                        <div class="custom-icon">🎁</div>
-                        <h4>Custom Amigurumi</h4>
-                        <p>Your favorite characters, pets, or original designs</p>
-                    </div>
-                    <div class="custom-card">
-                        <div class="custom-icon">🧣</div>
-                        <h4>Personalized Wearables</h4>
-                        <p>Scarves, beanies, and more in your colors</p>
-                    </div>
-                    <div class="custom-card">
-                        <div class="custom-icon">💝</div>
-                        <h4>Special Occasions</h4>
-                        <p>Baby showers, birthdays, weddings & holidays</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Preview -->
-    <section class="about-preview" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <div class="about-img-placeholder">
-                        <span>👩‍🎨</span>
-                        <p>Misha at work</p>
-                    </div>
-                    <div class="about-badge">
-                        <span>5+</span>
-                        <small>Years of<br>Crafting</small>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <span class="section-tag">Meet the Maker</span>
-                    <h2>Hi, I'm Misha!</h2>
-                    <p>What started as a relaxing hobby quickly turned into a passion I couldn't keep to myself. Every piece I create is made with intention, patience, and lots of love.</p>
-                    <p>I believe handmade items carry a special kind of magic — they hold stories, warmth, and a piece of the maker's heart. When you buy from Crochet Misha, you're not just getting a product; you're getting a little piece of joy.</p>
-                    <a href="about.html" class="btn btn-outline">Read My Full Story →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Reviews</span>
-                <h2>What Customers Say</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"The bunny I ordered for my niece's birthday was absolutely perfect! The details are incredible and she hasn't let go of it since."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">S</div>
-                        <div>
-                            <strong>Sarah K.</strong>
-                            <span>Custom Amigurumi</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Misha was so easy to communicate with on WhatsApp. She understood exactly what I wanted and the scarf turned out better than I imagined!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">J</div>
-                        <div>
-                            <strong>James T.</strong>
-                            <span>Custom Scarf</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"I've bought three pieces so far and each one is more beautiful than the last. The quality is outstanding and shipping was fast!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">A</div>
-                        <div>
-                            <strong>Amina R.</strong>
-                            <span>Repeat Customer</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Questions</span>
-                <h2>Frequently Asked</h2>
-            </div>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How long does a custom order take?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Most custom orders take 1–2 weeks depending on complexity. I'll always give you an estimated timeline when you reach out on WhatsApp!</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you ship internationally?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes! I ship worldwide. Local delivery is free, and international shipping rates are calculated at checkout based on your location.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How do I care for my crochet items?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Hand wash gently in cold water with mild soap. Lay flat to dry. Avoid wringing or machine washing to keep your piece looking beautiful for years.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can I request specific colors?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely! Send me a photo or color reference on WhatsApp and I'll match it as closely as possible with available yarn colors.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-box">
-                <div class="newsletter-text">
-                    <h3>Join the Crochet Family</h3>
-                    <p>Get early access to new drops, behind-the-scenes content, and exclusive offers.</p>
-                </div>
-                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <span class="logo-icon">🧶</span>
-                        <span class="logo-text">Crochet Misha</span>
-                    </a>
-                    <p>Handmade crochet creations made with love, patience, and the softest yarn.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="TikTok">🎵</a>
-                        <a href="#" aria-label="Pinterest">📌</a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <h4>Shop</h4>
-                    <ul>
-                        <li><a href="shop.html">All Products</a></li>
-                        <li><a href="shop.html">Amigurumi</a></li>
-                        <li><a href="shop.html">Wearables</a></li>
-                        <li><a href="shop.html">Home Decor</a></li>
-                        <li><a href="custom.html">Custom Orders</a></li>
-                    </ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="about.html">About Misha</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Get in Touch</h4>
-                    <p>Have a question or custom request?</p>
-                    <a href="https://wa.me/1234567890?text=Hi%20Misha!%20" class="btn btn-whatsapp btn-small" target="_blank">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        WhatsApp Me
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Crochet Misha. All rights reserved. Made with 🧶 and 💜</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Sticky WhatsApp Button -->
-    <a href="https://wa.me/1234567890?text=Hi%20Misha!%20I%20saw%20your%20website%20and%20I'd%20love%20to%20place%20an%20order.%20" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span class="whatsapp-tooltip">Chat with Misha</span>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">NAYA <span>CROCHET</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About Brand</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#custom">Custom Commissions</a></li>
+    </ul>
+    <a href="#" class="btn btn-gold shop-link" target="_blank">
+      <i class="fa-solid fa-bag-shopping"></i> Visit Store
     </a>
+  </nav>
 
-    <!-- Cart Drawer -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">Luxury Handcrafted Apparel & Decor</span>
+      <h1>Artisan Craftsmanship, Woven to Perfection</h1>
+      <p>Elevate your wardrobe and living space with bespoke, hand-crocheted masterpieces designed for timeless style and quality.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn btn-gold shop-link" target="_blank">
+          Browse Online Shop <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="btn btn-whatsapp" id="heroWhatsappBtn">
+          <i class="fa-brands fa-whatsapp"></i> Chat with Naya
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Trust Indicators -->
+  <section class="trust-bar">
+    <div class="trust-item">
+      <i class="fa-solid fa-gem"></i>
+      <div>
+        <h4>Premium Materials</h4>
+        <p>Crafted using luxury yarn blends</p>
+      </div>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <div>
+        <h4>Bespoke Tailoring</h4>
+        <p>Custom dimensions & colors</p>
+      </div>
+    </div>
+    <div class="trust-item">
+      <i class="fa-solid fa-truck-fast"></i>
+      <div>
+        <h4>Reliable Logistics</h4>
+        <p>Tracked delivery to your door</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collections -->
+  <section class="collections" id="collections">
+    <div class="section-header">
+      <h2>Curated Collections</h2>
+      <div class="gold-divider"></div>
+      <p>Explore our latest handcrafted creations or request a customized edition.</p>
+    </div>
+    
+    <div class="grid">
+      <!-- Collection 1 -->
+      <div class="card">
+        <div class="card-img-placeholder">
+          <i class="fa-solid fa-vest"></i>
         </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">
-                <span>🧶</span>
-                <p>Your cart is empty</p>
-                <a href="shop.html" class="btn btn-primary">Start Shopping</a>
-            </div>
+        <div class="card-body">
+          <span class="category-tag">Apparel</span>
+          <h3>Luxury Wearables</h3>
+          <p>Tailored cardigans, couture tops, and seasonal outerwear made to your exact measurements.</p>
+          <div class="card-actions">
+            <a href="#" class="btn btn-outline shop-link" target="_blank">Shop Items</a>
+            <button class="btn btn-whatsapp-sm whatsapp-order-btn" data-product="Luxury Wearables">Order Custom</button>
+          </div>
         </div>
-        <div class="cart-footer" id="cartFooter" style="display:none;">
-            <div class="cart-total">
-                <span>Total</span>
-                <strong id="cartTotal">$0.00</strong>
-            </div>
-            <a href="https://wa.me/1234567890?t
+      </div>
+
+      <!-- Collection 2 -->
+      <div class="card">
+        <div class="card-img-placeholder">
+          <i class="fa-solid fa-couch"></i>
+        </div>
+        <div class="card-body">
+          <span class="category-tag">Living</span>
+          <h3>Bespoke Home Decor</h3>
+          <p>Elegant throw blankets, luxury cushion covers, and artistic table accents for refined spaces.</p>
+          <div class="card-actions">
+            <a href="#" class="btn btn-outline shop-link" target="_blank">Shop Items</a>
+            <button class="btn btn-whatsapp-sm whatsapp-order-btn" data-product="Bespoke Home Decor">Order Custom</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection 3 -->
+      <div class="card">
+        <div class="card-img-placeholder">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <div class="card-body">
+          <span class="category-tag">Accessories</span>
+          <h3>Statement Accessories</h3>
+          <p>Hand-stitched handbags, plush collectibles, and signature winter accessories.</p>
+          <div class="card-actions">
+            <a href="#" class="btn btn-outline shop-link" target="_blank">Shop Items</a>
+            <button class="btn btn-whatsapp-sm whatsapp-order-btn" data-product="Statement Accessories">Order Custom</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Orders Banner -->
+  <section class="custom-orders" id="custom">
+    <div class="custom-box">
+      <h2>Have a Custom Design in Mind?</h2>
+      <p>We work closely with clients to create one-of-a-kind bespoke pieces. Share your vision, yarn preferences, or reference photos directly with Naya.</p>
+      <button class="btn btn-whatsapp btn-large" id="customWhatsappBtn">
+        <i class="fa-brands fa-whatsapp"></i> Commission a Custom Piece
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>NAYA CROCHET</h3>
+        <p>Premium handcrafted crochet items tailored for clients who value luxury, detail, and individuality.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#" class="shop-link" target="_blank">E-Commerce Store</a>
+        <a href="#" id="footerWhatsapp">WhatsApp Direct Line</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Naya Crochet. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
