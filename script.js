@@ -13,6 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const shopLinks = document.querySelectorAll(".shop-link");
   shopLinks.forEach(link => {
     link.href = CONFIG.storeUrl;
+
+const floatingWhatsapp = document.getElementById("floatingWhatsapp");
+if (floatingWhatsapp) {
+  floatingWhatsapp.addEventListener("click", (e) => {
+    e.preventDefault();
+    triggerWhatsAppRedirect("Hi Naya! I am browsing your website and have a quick question.");
+  });
+}
+
   });
 
   // 2. Core helper to handle structured WhatsApp redirection
