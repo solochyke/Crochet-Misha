@@ -1,7 +1,7 @@
 // Central Configuration
 const CONFIG = {
   // Insert Naya's WhatsApp number (International format without leading + or 00)
-  whatsappNumber: "2340000000000", 
+  whatsappNumber: "+2347059304088", 
   
   // Insert Naya's Online Store URL (e.g., Selar, Square, Shopify)
   storeUrl: "https://your-store-link.com" 
