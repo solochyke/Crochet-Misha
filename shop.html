@@ -1,0 +1,247 @@
+
+shop_html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Crochet Misha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .shop-hero {
+            padding: 140px 24px 60px;
+            background: linear-gradient(135deg, var(--primary-soft) 0%, #fff 100%);
+            text-align: center;
+        }
+        .shop-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 12px; }
+        .shop-hero p { color: var(--text-medium); max-width: 500px; margin: 0 auto 32px; }
+        
+        .shop-filters {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .filter-btn {
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: 2px solid rgba(107,33,168,0.15);
+            background: white;
+            color: var(--text-medium);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .shop-section { padding: 40px 0 100px; background: var(--bg-white); }
+        .shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }
+        
+        .shop-cta {
+            text-align: center;
+            padding: 60px 24px;
+            background: linear-gradient(135deg, var(--primary-lighter), var(--primary-soft));
+            border-radius: var(--radius-xl);
+            margin-top: 60px;
+        }
+        .shop-cta h3 { font-size: 1.5rem; margin-bottom: 12px; }
+        .shop-cta p { color: var(--text-medium); margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🧶</span>
+                <span class="logo-text">Crochet Misha</span>
+            </a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="custom.html">Custom Orders</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="shop.html" class="nav-cta">Shop Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="shop-hero">
+        <div class="container">
+            <span class="section-tag">Collection</span>
+            <h1>Shop Handmade Crochet</h1>
+            <p>Each piece is crafted with care using premium yarn. Browse by category or view all.</p>
+            <div class="shop-filters" id="shopFilters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Amigurumi">Amigurumi</button>
+                <button class="filter-btn" data-filter="Wearables">Wearables</button>
+                <button class="filter-btn" data-filter="Home Decor">Home Decor</button>
+                <button class="filter-btn" data-filter="Accessories">Accessories</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-grid" id="shopGrid"></div>
+            
+            <div class="shop-cta">
+                <h3>Can't find what you're looking for?</h3>
+                <p>I love creating custom pieces! Send me your idea and let's make it happen.</p>
+                <a href="https://wa.me/1234567890?text=Hi%20Misha!%20I%20have%20a%20custom%20crochet%20idea%20and%20I'd%20love%20to%20discuss%20it%20with%20you.%20" class="btn btn-whatsapp" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Request Custom Piece
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><span class="logo-icon">🧶</span><span class="logo-text">Crochet Misha</span></a>
+                    <p>Handmade crochet creations made with love, patience, and the softest yarn.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="TikTok">🎵</a>
+                        <a href="#" aria-label="Pinterest">📌</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="shop.html">Amigurumi</a></li>
+                        <li><a href="shop.html">Wearables</a></li>
+                        <li><a href="shop.html">Home Decor</a></li>
+                        <li><a href="custom.html">Custom Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Misha</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p>Have a question or custom request?</p>
+                    <a href="https://wa.me/1234567890?text=Hi%20Misha!%20" class="btn btn-whatsapp btn-small" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp Me
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Crochet Misha. All rights reserved. Made with 🧶 and 💜</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/1234567890?text=Hi%20Misha!%20I%20saw%20your%20website%20and%20I'd%20love%20to%20place%20an%20order.%20" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="whatsapp-tooltip">Chat with Misha</span>
+    </a>
+
+    <button class="cart-toggle" id="cartToggle" aria-label="Open cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty"><span>🧶</span><p>Your cart is empty</p><a href="shop.html" class="btn btn-primary">Start Shopping</a></div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+            <a href="https://wa.me/1234567890?text=Hi%20Misha!%20I'd%20like%20to%20checkout%20my%20cart.%20" class="btn btn-whatsapp btn-large" target="_blank">Checkout via WhatsApp</a>
+            <p class="cart-note">You'll complete payment with Misha directly on WhatsApp</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Shop-specific: render all products and filter
+        const allProducts = [
+            { id: 1, name: "Cozy Bunny Amigurumi", emoji: "🐰", price: 35, original: 45, badge: "bestseller", category: "Amigurumi", desc: "Soft, huggable bunny in pastel colors" },
+            { id: 2, name: "Chunky Knit Beanie", emoji: "🧢", price: 28, original: null, badge: "new", category: "Wearables", desc: "Warm winter beanie in lavender" },
+            { id: 3, name: "Mini Cactus Plant", emoji: "🌵", price: 18, original: null, badge: null, category: "Home Decor", desc: "No-water needed desk companion" },
+            { id: 4, name: "Crochet Flower Bouquet", emoji: "💐", price: 42, original: 55, badge: "bestseller", category: "Home Decor", desc: "Everlasting floral arrangement" },
+            { id: 5, name: "Sleepy Bear Plush", emoji: "🧸", price: 38, original: null, badge: null, category: "Amigurumi", desc: "The perfect bedtime companion" },
+            { id: 6, name: "Boho Wall Hanging", emoji: "🪞", price: 55, original: null, badge: "custom", category: "Home Decor", desc: "Handmade macrame-style decor" },
+            { id: 7, name: "Cozy Scarf", emoji: "🧣", price: 32, original: 40, badge: null, category: "Wearables", desc: "Extra long and super soft" },
+            { id: 8, name: "Tiny Turtle Keychain", emoji: "🐢", price: 12, original: null, badge: "new", category: "Accessories", desc: "Cute pocket-sized friend" },
+            { id: 9, name: "Flower Coaster Set", emoji: "🌸", price: 22, original: null, badge: null, category: "Home Decor", desc: "Set of 4 floral coasters" },
+            { id: 10, name: "Baby Blanket", emoji: "👶", price: 65, original: 80, badge: "bestseller", category: "Wearables", desc: "Soft blanket for little ones" },
+            { id: 11, name: "Cat Amigurumi", emoji: "🐱", price: 30, original: null, badge: null, category: "Amigurumi", desc: "Adorable sitting cat figure" },
+            { id: 12, name: "Crochet Earrings", emoji: "💎", price: 15, original: null, badge: "new", category: "Accessories", desc: "Lightweight statement earrings" }
+        ];
+
+        function createProductCard(product) {
+            const badgeHTML = product.badge ? `<span class="product-badge ${product.badge}">${product.badge === 'bestseller' ? 'Bestseller' : product.badge === 'new' ? 'New' : 'Custom'}</span>` : '';
+            const originalPrice = product.original ? `<span class="original">$${product.original}</span>` : '';
+            return `<div class="product-card fade-in">
+                <div class="product-image">${badgeHTML}<span class="emoji">${product.emoji}</span></div>
+                <div class="product-info"><h3>${product.name}</h3><p>${product.desc}</p>
+                <div class="product-meta"><span class="product-price">$${product.price}${originalPrice}</span>
+                <button class="btn-add-cart" data-id="${product.id}" aria-label="Add to cart">🛒</button></div></div></div>`;
+        }
+
+        function renderShop(filter = 'all') {
+            const grid = document.getElementById('shopGrid');
+            const filtered = filter === 'all' ? allProducts : allProducts.filter(p => p.category === filter);
+            grid.innerHTML = filtered.map(p => createProductCard(p)).join('');
+            document.querySelectorAll('.btn-add-cart').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.currentTarget.dataset.id);
+                    const product = allProducts.find(p => p.id === id);
+                    if (product) {
+                        let cart = JSON.parse(localStorage.getItem('crochetCart')) || [];
+                        const existing = cart.find(item => item.id === id);
+                        if (existing) existing.qty++; else cart.push({ ...product, qty: 1 });
+                        localStorage.setItem('crochetCart', JSON.stringify(cart));
+                        window.dispatchEvent(new Event('storage'));
+                        btn.classList.add('added'); btn.innerHTML = '✓';
+                        setTimeout(() => { btn.classList.remove('added'); btn.innerHTML = '🛒'; }, 1500);
+                        openCart();
+                    }
+                });
+            });
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderShop(btn.dataset.filter);
+            });
+        });
+
+        renderShop();
+    </script>
+</body>
+</html>'''
+
+with open('/mnt/agents/output/shop.html', 'w') as f:
+    f.write(shop_html)
+print("shop.html created")
